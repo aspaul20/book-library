@@ -1,0 +1,1 @@
+Wrote logic tests, set up Poetry env with Ruff8 for pre-commit linting and 
