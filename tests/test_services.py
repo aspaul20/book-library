@@ -39,5 +39,8 @@ def test_services_exception():
         library.checkout_book(isbn="123", username="user5")
 
     library.checkout_book(isbn="123", username="user1")
-    with pytest.raises(ValueError, match="Book not available"):
+    with pytest.raises(ValueError, match=r"Book is already borrowed, will return on"):
         library.checkout_book(isbn="123", username="user2")
+
+    with pytest.raises(ValueError, match="Book not available"):
+        library.checkout_book(isbn="356", username="user2")

@@ -1,1 +1,1 @@
-Wrote logic tests with Pytest & Pytest-cov, set up Poetry env with Ruff8 for pre-commit linting and 
+Wrote logic tests with Pytest & Pytest-cov, set up Poetry env with Ruff8 for pre-commit linting 

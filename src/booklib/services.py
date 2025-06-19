@@ -16,13 +16,15 @@ class Library:
         self.users.append(user)
 
     def checkout_book(self, isbn: str, username: str):
-        book = next(
-            (b for b in self.books if b.isbn == isbn and b.borrower is None), None
-        )
+        book = next((b for b in self.books if b.isbn == isbn), None)
         user = next((u for u in self.users if u.username == username), None)
 
         if not book:
             raise ValueError("Book not available")
+        if book.borrower is not None:
+            raise ValueError(
+                "Book is already borrowed, will return on {}".format(book.due_date)
+            )
         if not user:
             raise ValueError("User not found")
 
