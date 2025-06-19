@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional
 
+
 @dataclass
 class Book:
     title: str
@@ -11,6 +12,7 @@ class Book:
     isbn: str
     borrower: Optional[str] = None
     due_date: Optional[datetime] = None
+
 
 @dataclass
 class User:

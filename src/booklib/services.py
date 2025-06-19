@@ -3,6 +3,7 @@
 from datetime import datetime, timedelta
 from .models import Book, User
 
+
 class Library:
     def __init__(self):
         self.books = []
@@ -15,7 +16,9 @@ class Library:
         self.users.append(user)
 
     def checkout_book(self, isbn: str, username: str):
-        book = next((b for b in self.books if b.isbn == isbn and b.borrower is None), None)
+        book = next(
+            (b for b in self.books if b.isbn == isbn and b.borrower is None), None
+        )
         user = next((u for u in self.users if u.username == username), None)
 
         if not book:
