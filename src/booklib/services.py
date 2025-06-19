@@ -27,7 +27,7 @@ class Library:
             )
         if not user:
             raise ValueError("User not found")
-
+        print("debug")
         book.borrower = username
         book.due_date = datetime.now() + timedelta(days=14)
         user.borrowed_books.append(isbn)
